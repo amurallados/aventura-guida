@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<title>Una historia que solo tú puedes descubrir</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:radial-gradient(circle at 15% 10%,#236bc2,#07182f 70%);color:#fff;font-family:Georgia,serif;overflow-x:hidden}
+main{max-width:520px;margin:auto;min-height:100vh;padding:20px;display:flex;align-items:center}
+.card{width:100%;padding:28px;border-radius:28px;background:#ffffff12;border:1px solid #ffffff30;backdrop-filter:blur(15px);box-shadow:0 22px 65px #0006}
+h1{font-size:31px;line-height:1.12;margin:10px 0 16px;font-weight:700}p{font-size:18px;line-height:1.65;color:#f1f6ff}
+.small{font-family:system-ui,sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;opacity:.62}
+.icon{font-size:55px;margin:12px 0}
+button{width:100%;padding:16px;margin-top:14px;border:0;border-radius:17px;background:#fff;color:#0759b8;font:700 16px system-ui,sans-serif}
+.choice{background:#ffffff0c;color:#fff;border:1px solid #ffffff35;text-align:left}
+.line{height:1px;background:#ffffff22;margin:23px 0}
+.fade{animation:turn .7s ease}
+@keyframes turn{from{opacity:0;transform:translateX(22px)}to{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<main><div id="app" class="card"></div></main>
+<script>
+const app=document.getElementById("app");
+
+function page(content){app.innerHTML='<div class="fade">'+content+'</div>'}
+
+function start(){
+page(`
+<div class="small">UNA HISTORIA SIN PRISA</div>
+<div class="icon">📖</div>
+<h1>Hay historias que merecen ser contadas despacio.</h1>
+<p>Esta es una de ellas.</p>
+<p>No tienes que resolver nada ni buscar una respuesta correcta. Solo tienes que avanzar cuando tengas curiosidad por saber qué viene después.</p>
+<button onclick="c1()">Abrir la primera página →</button>
+`);
+}
+
+function c1(){
+page(`
+<div class="small">PÁGINA 1 · ANTES DE TODO</div>
+<div class="icon">☁️</div>
+<h1>Hubo un momento en el que todavía no sabíamos lo que vendría.</h1>
+<p>Dos personas pueden cruzarse sin imaginar que, algún día, una de ellas terminará ocupando un rincón enorme de la vida de la otra.</p>
+<p>Y lo bonito es que casi nunca nos damos cuenta del instante exacto en que empieza a suceder.</p>
+<button onclick="c2()">Pasar página →</button>
+`);
+}
+
+function c2(){
+page(`
+<div class="small">PÁGINA 2 · LA PREGUNTA</div>
+<div class="icon">🕰️</div>
+<h1>Si pudieras volver a un solo momento...</h1>
+<p>...no para cambiarlo, sino para vivirlo otra vez exactamente como ocurrió, ¿cuál elegirías?</p>
+<button class="choice" onclick="path1()">Uno de esos momentos que todavía te hace sonreír.</button>
+<button class="choice" onclick="path2()">Uno que en aquel momento parecía normal y ahora significa mucho.</button>
+`);
+}
+
+function path1(){
+page(`
+<div class="small">PÁGINA 3 · UNA RESPUESTA BONITA</div>
+<div class="icon">✨</div>
+<h1>Entonces seguramente ese instante tenía algo especial.</h1>
+<p>Quizá fue una conversación, una tontería, una tarde cualquiera o una de esas situaciones que solo tienen sentido cuando las recuerdas con la persona adecuada.</p>
+<p>Los recuerdos no siempre guardan lo que pasó. Muchas veces guardan <b>cómo nos sentimos</b>.</p>
+<button onclick="c4()">Seguir →</button>
+`);
+}
+
+function path2(){
+page(`
+<div class="small">PÁGINA 3 · LO QUE CAMBIA CON EL TIEMPO</div>
+<div class="icon">🌙</div>
+<h1>Eso es lo curioso de los recuerdos.</h1>
+<p>Hay momentos que parecen pequeños mientras los vivimos y que, meses después, descubrimos que eran mucho más importantes de lo que pensábamos.</p>
+<p>El tiempo tiene esa costumbre de enseñarnos el valor de las cosas.</p>
+<button onclick="c4()">Seguir →</button>
+`);
+}
+
+function c4(){
+page(`
+<div class="small">PÁGINA 4 · ENTRE LÍNEAS</div>
+<div class="icon">💫</div>
+<h1>Y entonces aparece una persona.</h1>
+<p>No hace falta que cambie el mundo entero.</p>
+<p>A veces basta con que consiga que esperes un mensaje, que una conversación se alargue sin darte cuenta o que un día corriente termine siendo uno que quieres recordar.</p>
+<p><b>Eso ya dice bastante.</b></p>
+<button onclick="c5()">Continuar la historia →</button>
+`);
+}
+
+function c5(){
+page(`
+<div class="small">PÁGINA 5 · LO QUE QUERÍA DECIRTE</div>
+<div class="icon">💙</div>
+<h1>Creo que ya sabes quién es esa persona.</h1>
+<p>Pero quería dejarlo escrito de una forma distinta.</p>
+<div class="line"></div>
+<p>Guida, me encanta que seas parte de mi vida. Me encanta todo lo que todavía podemos aprender el uno del otro y la cantidad de momentos que aún no existen y algún día podremos recordar.</p>
+<button onclick="final()">Última página →</button>
+`);
+}
+
+function final(){
+page(`
+<div class="small">ÚLTIMA PÁGINA · CONTINUARÁ</div>
+<div class="icon">🌼</div>
+<h1>Y aquí termina esta historia.</h1>
+<p>Bueno...</p>
+<p style="font-size:22px"><b>solo esta parte.</b></p>
+<p>Porque no quiero inventarme un final para algo que todavía está escribiendo nuevos capítulos.</p>
+<p>Solo quería dejarte una página que, dentro de un tiempo, podamos mirar y pensar:</p>
+<p style="font-size:21px"><b>«Mira todo lo que todavía nos quedaba por vivir.»</b></p>
+<div class="line"></div>
+<p style="text-align:center;font-size:24px"><b>Para ti, Guida. 💙</b></p>
+<button onclick="start()">Volver al principio ↩</button>
+`);
+}
+start();
+</script>
+</body>
+</html>
